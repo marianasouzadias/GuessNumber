@@ -1,7 +1,7 @@
 const form = document.getElementById('form');
 form.addEventListener('submit', handleSubmit);
 
-let status = document.getElementById('status');
+let currentStatus = document.getElementById('status');
 let attempt = document.getElementById('attempt');
 let result = document.getElementById('result');
 
@@ -32,19 +32,19 @@ function handleSubmit(e) {
 
    if(numberDrawn == kick) {
        playAgain();
-       status.innerHTML = 'Parabéns, você acertou!';
+       currentStatus.innerHTML = 'Parabéns, você acertou!';
        result.style.transition = '0.4s';
        result.style.backgroundColor = '#37c978';
-       result.style.color = '#fff';
-       status.style.color = '#fff';
+    result.style.color = '#fff';''
+       currentStatus.style.color = '#fff';
        clear();
    } else if(numberDrawn > kick) {
-       status.innerHTML = 'O número é maior!';
-       status.style.color ='#de4251';
+       currentStatus.innerHTML = 'O número é maior!';
+       currentStatus.style.color ='#de4251';
        clear();
    } else if(numberDrawn < kick) {
-    status.innerHTML = 'O número é menor!';
-    status.style.color ='#de4251';
+    currentStatus.innerHTML = 'O número é menor!';
+    currentStatus.style.color ='#de4251';
     clear();
  }
 };
